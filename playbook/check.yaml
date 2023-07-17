@@ -1,0 +1,11 @@
+---
+- name: check  
+  hosts: dev 
+  become: true
+  tasks:
+    - name: check  
+      shell: free -h | grep Mem
+      register: command_output
+    - name: Print
+      debug:
+        msg: "{{ command_output.stdout_lines }}"
