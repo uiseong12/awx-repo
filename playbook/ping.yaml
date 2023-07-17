@@ -1,6 +1,6 @@
 ---
 -  name: ping test
-   hosts: all 
+   hosts: dev 
    gather_facts: false
    tasks:
    - name: ping
