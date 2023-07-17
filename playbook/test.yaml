@@ -1,5 +1,5 @@
 ---
--  name: ping test
+-  name: docker_info
    hosts: dev 
    gather_facts: false
    tasks:
