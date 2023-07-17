@@ -1,7 +1,11 @@
-- name: Collect System Information
-  hosts: dev 
-  become: true
+---
+- name: Gather system facts
+  hosts: all
   tasks:
-    - name: Generate System Report
-      include_role: 
-        name: system-report
+    - name: Gather facts
+      setup:
+      register: system_facts
+    - name: Print
+      debug:
+        msg: "{{ system_facts.stdout_lines }}"
+
